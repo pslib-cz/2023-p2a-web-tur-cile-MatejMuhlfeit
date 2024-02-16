@@ -25,15 +25,16 @@ html {
     
     /* max-height: 80vh; */
 }
-.categories__item:has(:hover) {
+.categories__item:hover {
     transition: 1s;
     box-shadow: 0 0 8px 2px var(--text-light);
     transform: scale(1.05);
        /*transform: translate(50%, 0); */
 }
-.categories__item:hover .categories__item:not(:hover){
+.categories__item:has(:hover){
     filter: blur(5px);
 }
+
 .categories__item-image {
 
     filter: brightness(0.9) saturate(1) contrast(1);
