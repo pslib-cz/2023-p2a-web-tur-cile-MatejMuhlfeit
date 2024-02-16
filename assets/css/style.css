@@ -25,12 +25,14 @@ html {
     
     /* max-height: 80vh; */
 }
-.categories__item:hover {
+.categories__item:has(:hover) {
     transition: 1s;
     box-shadow: 0 0 8px 2px var(--text-light);
     transform: scale(1.05);
-    
-
+       /*transform: translate(50%, 0); */
+}
+.categories__item:hover .categories__item:not(:hover){
+    filter: blur(5px);
 }
 .categories__item-image {
 
@@ -39,11 +41,22 @@ html {
 
 
 }
-.categories__item-description {
+.categories__item-description, .categories__item-description2 {
     position: absolute;
     padding: 1em;
     color: var(--text-light);
     bottom: 0;    
+}
+
+.categories__item:hover .categories__item-description{
+    transform: translate(150%, -250%);
+    transition: 1s;
+    
+}
+
+.categories__item:hover .categories__item-description2{
+    transform: translate(28%, -250%);
+    transition: 1s;
 }
 /* TODO */
 
