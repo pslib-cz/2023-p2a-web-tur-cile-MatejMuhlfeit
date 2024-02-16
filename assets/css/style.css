@@ -1,5 +1,5 @@
 :root {
-    --text-light: #000000;
+    --text-light: white;
 }
 html {
     font-family: 'Open Sans', sans-serif;
@@ -8,11 +8,13 @@ html {
     text-align: center;
     padding: 1em;
     margin-bottom: 1em;;
+    background-color: lightblue;
 }
 .categories {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     /* použijte auto-fit s šířkou sloupce minimálně 300px */
     padding: 1em;
     gap: 1em;
@@ -20,17 +22,28 @@ html {
 .categories__item {
     position: relative;
     color: inherit;
+    
     /* max-height: 80vh; */
 }
 .categories__item:hover {
+    transition: 1s;
     box-shadow: 0 0 8px 2px var(--text-light);
+    transform: scale(1.05);
+    
+
 }
 .categories__item-image {
+
     filter: brightness(0.9) saturate(1) contrast(1);
+    border-radius: 10px;
+
+
 }
 .categories__item-description {
+    position: absolute;
     padding: 1em;
     color: var(--text-light);
+    bottom: 0;    
 }
 /* TODO */
 
